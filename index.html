@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Василий - Мои соцсети 👋</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+        
+        :root {
+            --primary: #6c5ce7;
+            --secondary: #a29bfe;
+            --dark: #2d3436;
+            --light: #f5f6fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary);
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+        
+        .name-card {
+            display: inline-block;
+            padding: 12px 25px;
+            background: rgba(108, 92, 231, 0.2);
+            border-radius: 50px;
+            border: 2px solid var(--primary);
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        h1 {
+            font-size: 28px;
+            margin: 0;
+            color: var(--light);
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+        
+        .bio {
+            font-size: 16px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+            color: #ccc;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            border-left: 3px solid var(--primary);
+        }
+        
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .link:hover {
+            background: rgba(108, 92, 231, 0.3);
+            border-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(108, 92, 231, 0.4);
+        }
+        
+        .link i {
+            font-size: 24px;
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+        
+        .vk { color: #4a76a8; }
+        .tg { color: #0088cc; }
+        .yt { color: #ff0000; }
+        .ig { color: #e1306c; }
+        .tw { color: #9146ff; }
+        
+        .tech-icons {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+        
+        .tech-icon {
+            position: absolute;
+            font-size: 24px;
+            color: white;
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% { transform: translateY(0) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Плавающие иконки техники на фоне -->
+    <div class="tech-icons" id="techIcons"></div>
+    
+    <div class="container">
+        <div class="profile">
+            <!-- Ваша аватарка -->
+            <img src="https://i.postimg.cc/mD6KSnqd/image.png" alt="Моя аватарка" class="avatar">
+            
+            <!-- Выделенная карточка с именем -->
+            <div class="name-card">
+                <h1>Меня зовут Василий, приятно познакомиться! 👋</h1>
+            </div>
+            
+            <!-- Дополнительный текст -->
+            <p class="bio">
+                Здесь вы найдете все мои социальные сети и проекты. Подписывайтесь! ✨
+            </p>
+        </div>
+        
+        <div class="links">
+            <!-- ВКонтакте -->
+            <a href="https://vk.com/usov917" class="link" target="_blank">
+                <i class="fab fa-vk vk"></i>
+                <span>ВКонтакте</span>
+            </a>
+            
+            <!-- Telegram -->
+            <a href="https://t.me/Usov917" class="link" target="_blank">
+                <i class="fab fa-telegram tg"></i>
+                <span>Telegram</span>
+            </a>
+            
+            <!-- YouTube -->
+            <a href="https://youtube.com/@sunrise_technologyrus?si=7KMIacJyywPBMnGA" class="link" target="_blank">
+                <i class="fab fa-youtube yt"></i>
+                <span>YouTube</span>
+            </a>
+            
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/peace_dato13?igsh=NTRscGRtODhsczc1&utm_source=qr" class="link" target="_blank">
+                <i class="fab fa-instagram ig"></i>
+                <span>Instagram</span>
+            </a>
+            
+            <!-- Twitch -->
+            <a href="https://www.twitch.tv/sunolgy_gaming" class="link" target="_blank">
+                <i class="fab fa-twitch tw"></i>
+                <span>Twitch</span>
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // Плавающие иконки техники
+        const techIcons = [
+            'fa-keyboard', 'fa-mouse', 'fa-headphones', 'fa-gamepad', 
+            'fa-laptop', 'fa-mobile', 'fa-server', 'fa-microchip'
+        ];
+        
+        const container = document.getElementById('techIcons');
+        
+        for (let i = 0; i < 30; i++) {
+            const icon = document.createElement('i');
+            icon.className = `tech-icon fas ${techIcons[Math.floor(Math.random() * techIcons.length)]}`;
+            icon.style.left = `${Math.random() * 100}%`;
+            icon.style.top = `${Math.random() * 100}%`;
+            icon.style.fontSize = `${Math.random() * 20 + 10}px`;
+            icon.style.animationDuration = `${Math.random() * 20 + 10}s`;
+            icon.style.animationDelay = `${Math.random() * 5}s`;
+            container.appendChild(icon);
+        }
+    </script>
+</body>
+</html>
